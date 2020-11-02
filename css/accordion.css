@@ -1,0 +1,28 @@
+.collapse {
+    border: solid rgba(0, 0, 0, 0.247) 1px;
+    padding: 0.5em 1rem;
+    margin-bottom: 1rem;
+}
+
+.collapse a {
+    font-weight: bold;
+}
+
+.inner-content {
+    padding: 0.5em 0 1em 1.1em;
+    color: var(--dark80);
+}
+
+.content {
+    max-height: 0em;
+    transition: 0.3s linear 0s;
+    overflow: hidden;
+}
+
+.collapse:target .content {
+    max-height: 15em;
+}
+
+.collapse:target a:before {
+    transform: rotate(-90deg);
+}

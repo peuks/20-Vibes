@@ -1,0 +1,323 @@
+@import "/css/normalize.css";
+@import "/css/btn.css";
+@import "/css/accordion.css";
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+
+
+:root {
+    --clr-1: #2B2D42;
+    --clr-2: #E86A92;
+    --clr-3: #F7E733;
+    --clr-4: #F7F7F9;
+    --clr-5: #41E2BA;
+    --clr-6: #C1666B;
+
+    --dark80: rgba(48, 79, 89, .8);
+    --dark60: rgba(48, 79, 89, .6);
+    --transition: all 0.3s ease 0s;
+
+    --ff: 'Inter', sans-serif;
+    --fw-reg: 300;
+    --fw-bold: 900;
+
+    --fs-h1: 2.2rem;
+    --fs-h2: 2.0rem;
+    --fs-h3: 1.6rem;
+    --fs-h4: 1.4rem;
+    --fs-h5: 1.2rem;
+    --fs-body: 1rem;
+    --ts: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Reset class*/
+* {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background:
+        linear-gradient(var(--dark60),
+            var(--dark80)),
+        url("https://source.unsplash.com/daily");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* Fix for Burger Menu */
+    overflow: hidden;
+
+}
+
+/* TYPOGRAPHY */
+
+/* h1 {
+    font-size: var(--fs-h1);
+}
+
+h2 {
+    font-size: var(--fs-h2);
+}
+
+h3 {
+    font-size: var(--fs-h3);
+}
+
+h4 {
+    font-size: var(--fs-h4);
+}
+
+h5 {
+    font-size: var(--fs-h5);
+} */
+
+/* GENERAL */
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* CONTAINER */
+.container {
+    border: solid 1px white;
+    height: 100%;
+    width: 90%;
+    margin: auto;
+}
+
+section {
+    background-color: var(--clr-4);
+}
+
+/* Remove the 6em padding on Banner Section */
+.banner {
+    /* padding: 0; */
+}
+
+
+/* NAVBAR */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 8vh;
+    /* background-color: var(--clr-1); */
+}
+
+.logo {
+    color: var(--clr-4);
+    text-transform: uppercase;
+}
+
+.nav__links {
+    display: flex;
+
+    width: 60%;
+
+    justify-content: space-around;
+    color: var(--clr-4);
+
+    position: absolute;
+    /* background-color: var(--clr-1); */
+    top: 8vh;
+    right: 0;
+    height: 92vh;
+    width: 50%;
+    flex-direction: column;
+    align-items: center;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in;
+}
+
+.nav__links a {
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 0.875rem;
+    color: var(--clr-4);
+}
+
+.nav__links a {
+    opacity: 0;
+}
+
+.nav-active {
+    transform: translateX(0%);
+}
+
+.burger {
+    cursor: pointer;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    margin: 6px;
+    background-color: var(--clr-4);
+    transition: all 0.3s ease;
+}
+
+@media screen and (min-width:760px) {
+
+    .nav__links {
+        transform: translateX(0);
+        position: initial;
+        flex-direction: row;
+        height: initial;
+        justify-content: space-between;
+
+    }
+
+    .nav__links a {
+        opacity: 1;
+    }
+
+
+
+    .nav-active {
+        transform: translateX(0%);
+    }
+
+    .burger {
+        display: none;
+    }
+}
+
+
+
+/* Mobile Nav Animation */
+@keyframes navLinkFade {
+    from {
+        opacity: O;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+/* Burger Animation to X form */
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2 {
+    opacity: 0;
+}
+
+.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* HERO SECTION */
+.banner {
+    height: 50vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);
+    background-size: cover;
+    background-position: center;
+
+
+    /* Center Verticaly our banner */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.banner__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    color: var(--clr-4);
+    height: 90%;
+
+}
+
+.banner__container__title {
+    text-shadow: var(--ts);
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.banner__container__text {
+    font-size: 1.25rem;
+    opacity: .7;
+    text-shadow: var(--ts);
+}
+
+
+/* ABOUT SECTION */
+.about {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    min-height: 34vh;
+    align-items: baseline;
+}
+
+.about__col {
+    /* Free Space around will be used by justify-content  */
+    flex: 1;
+    /* width: initial; */
+    padding-bottom: 1rem;
+}
+
+.about__col--bolder {
+    font-size: 1.2rem;
+    color: var(--clr-1);
+}
+
+.about__col--lighter {
+    color: var(--dark80);
+}
+
+/* What You get Section */
+.fa-ul li {
+    font-weight: bold;
+}
+
+.fa-li {
+    left: -2.5em;
+    /*By default it's stik on the right*/
+}
+
+.fa-li+p {
+    margin-top: 0;
+    font-weight: normal;
+    color: var(--dark80);
+}
+
+.fa-ul+span {
+    background-color: var(--clr-2);
+}
+
+@media screen and (min-width:1100px) {
+
+    /* Return to column mode */
+    .about {
+        flex-direction: initial;
+    }
+
+    .about__col {
+        /* Free Space around will be used by justify-content  */
+        width: 32%;
+        flex: initial;
+    }
+
+}
