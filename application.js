@@ -2,7 +2,7 @@ const elements = {
     burger: document.querySelector(".burger"),
     nav: document.querySelector(".nav__links"),
     links: document.querySelectorAll(".nav__links a"),
-    // base: document.querySelector("#base"),
+    btn: document.querySelector("#btn-float"),
 };
 
 function renderNavBar() {
@@ -51,9 +51,9 @@ accordionItemHeaders.forEach(accordionItemHeader => {
 
 function handleUpdate() {
     // I'm using this.base because of my id <3.
-    document.documentElement.style.setProperty('--clr-4', this.value);
+    document.documentElement.style.setProperty('--clr-2', `#41E2BA`);
 
 }
 
 
-base.addEventListener('change', handleUpdate);
+elements.btn.addEventListener('click', handleUpdate);
