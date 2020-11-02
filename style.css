@@ -1,4 +1,5 @@
 @import "/css/normalize.css";
+@import "/css/navbar.css";
 @import "/css/btn.css";
 @import "/css/accordion.css";
 @import "/css/gallery.css";
@@ -45,21 +46,14 @@ body {
 }
 
 body {
-    max-width: 1400px;
-    margin: auto;
 
-    background:
-        linear-gradient(var(--dark60),
-            var(--dark80)),
-        url("https://source.unsplash.com/daily");
-    background-position: center;
+    background: linear-gradient(var(--dark60), var(--dark80)), url(https://source.unsplash.com/daily);
+    /* background-position: center; */
     background-repeat: no-repeat;
-    background-size: cover;
+    /* background-size: cover; */
     font-family: var(--ff);
-    /* Fix for Burger Menu */
     overflow: auto;
     color: var(--clr-1);
-
 }
 
 
@@ -103,157 +97,12 @@ main {
 
 /* CONTAINER */
 .container {
+    max-width: 1400px;
     height: 100%;
     margin: auto;
 }
 
-@media screen and (min-width:760px) {
-    .container {
-        width: 90%;
 
-    }
-}
-
-
-/* Remove the 6em padding on Banner Section */
-.banner {
-    /* padding: 0; */
-}
-
-
-/* NAVBAR */
-.nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    min-height: 8vh;
-    padding: 0 0.5em;
-}
-
-.logo {
-    color: var(--clr-4);
-    text-transform: uppercase;
-}
-
-.nav__links {
-    display: flex;
-
-    width: 60%;
-
-    justify-content: space-around;
-    color: var(--clr-4);
-
-    position: absolute;
-    background-color: var(--clr-1);
-    top: 8vh;
-    right: 0;
-    height: 92vh;
-    width: 50%;
-    flex-direction: column;
-    align-items: center;
-    transform: translateX(100%);
-    transition: transform 0.5s ease-in;
-}
-
-.nav__links a {
-    letter-spacing: 3px;
-    font-weight: bold;
-    font-size: 0.875rem;
-    color: var(--clr-4);
-}
-
-.nav__links a {
-    opacity: 0;
-}
-
-a:hover {
-    color: var(--clr-2);
-    transition: all 0.5s ease;
-
-}
-
-.nav-active {
-    transform: translateX(0%);
-}
-
-.burger {
-    cursor: pointer;
-}
-
-.burger div {
-    width: 25px;
-    height: 3px;
-    margin: 6px;
-    background-color: var(--clr-4);
-    transition: all 0.3s ease;
-}
-
-@media screen and (min-width:760px) {
-
-    .nav {
-        padding: 0 6em;
-    }
-
-    .nav__links {
-        transform: translateX(0);
-        position: initial;
-        flex-direction: row;
-        height: initial;
-        justify-content: space-between;
-        background-color:transparent;
-
-    }
-
-    .nav__links a {
-        opacity: 1;
-    }
-
-
-
-    .nav-active {
-        transform: translateX(0%);
-    }
-
-    .banner__container__text {
-        display: block;
-    }
-
-    .burger {
-        display: none;
-    }
-
-    .banner__container__text {
-        display: block !important;
-    }
-}
-
-
-
-/* Mobile Nav Animation */
-@keyframes navLinkFade {
-    from {
-        opacity: O;
-        transform: translateX(50px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateX(0px);
-    }
-}
-
-/* Burger Animation to X form */
-.toggle .line1 {
-    transform: rotate(-45deg) translate(-5px, 6px);
-}
-
-.toggle .line2 {
-    opacity: 0;
-}
-
-.toggle .line3 {
-    transform: rotate(45deg) translate(-5px, -6px);
-}
 
 /* HERO SECTION */
 .banner {
@@ -288,7 +137,7 @@ a:hover {
 }
 
 .banner__container__text {
-    display: none;
+    visibility: hidden;
     font-size: 1.25rem;
     opacity: .7;
     text-shadow: var(--ts);
@@ -513,9 +362,14 @@ blockquote {
     max-width: 83%;
     margin-left: auto;
 }
-.quotes__content--right blockquote{
-     margin-right:0 auto;
+blockquote footer {
+    padding: 0;
+    color: var(--clr-1);
+    justify-content: end;
 }
+.quotes__content--right blockquote{
+    margin-left: auto;
+    }
 
 blockquote p {
     font-style: italic;
@@ -528,6 +382,7 @@ span {
     font-weight: bold;
 }
 
+
 /* Footer Section*/
 .footer {
     padding-top: 4em;
@@ -535,13 +390,15 @@ span {
     background-color: var(--clr-1);
     color: var(--clr-4);
 }
-/* Footer */
+
+/* General Footer */
 footer{
-    background:transparent;
+    /* background:transparent; */
     display: flex;
     color: var(--clr-4);
     justify-content: space-between;
-        font-weight: bold;
+    font-weight: bold;
+    background:transparent;
 
 }
 footer.nav__links__footer{
@@ -559,4 +416,68 @@ footer.nav__links__footer{
     background-color: transparent;
     align-items: center;
 }
+input#lname{
+    display: block;
+    padding: 0.5em 3em;
+    margin-bottom: 2em;
+    
+}
 
+.footer__text--newsletter{
+        max-width: 19em;
+}
+
+@media screen and (min-width:760px) {
+    .container {
+        width: 90%;
+
+    }
+    .nav {
+        padding: 0 6em;
+    }
+
+    .nav__links {
+        transform: translateX(0);
+        position: initial;
+        flex-direction: row;
+        height: initial;
+        justify-content: space-between;
+        background-color:transparent;
+
+    }
+
+    .nav__links a {
+        opacity: 1;
+    }
+
+
+
+    .nav-active {
+        transform: translateX(0%);
+    }
+
+    .banner__container__text {
+        visibility:visible
+    }
+
+    .burger {
+        display: none;
+    }
+
+
+/* Float section */
+
+.btn-floating-container {
+    top: 12vh;
+    position: fixed;
+}
+
+.btn-floating {
+    width: 50px;
+    height: 50px;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(245, 245, 245, 0.075);
+    text-align: center;
+    padding: 0px;
+    font-size: 24px;
+}

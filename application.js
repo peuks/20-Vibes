@@ -25,6 +25,7 @@ elements.burger.addEventListener("click", () => {
 const accordionItemHeaders = document.querySelectorAll(".accordion-item-header");
 
 accordionItemHeaders.forEach(accordionItemHeader => {
+
     accordionItemHeader.addEventListener("click", event => {
 
         // Uncomment in case you only want to allow for the display of only one collapsed item at a time!
@@ -45,3 +46,14 @@ accordionItemHeaders.forEach(accordionItemHeader => {
 
     });
 });
+
+// Change Background Color
+
+function handleUpdate() {
+    // I'm using this.base because of my id <3.
+    document.documentElement.style.setProperty('--clr-4', this.value);
+
+}
+
+
+base.addEventListener('change', handleUpdate);
