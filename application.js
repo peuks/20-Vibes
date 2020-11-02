@@ -22,6 +22,10 @@ elements.burger.addEventListener("click", () => {
 })
 
 
+
+
+
+
 const accordionItemHeaders = document.querySelectorAll(".accordion-item-header");
 
 accordionItemHeaders.forEach(accordionItemHeader => {
@@ -48,10 +52,22 @@ accordionItemHeaders.forEach(accordionItemHeader => {
 });
 
 // Change Background Color
+function getColor() {
+    const colors = [
+        "#2B2D42",
+        "#E6597C",
+        "#F7E733",
+        "#41E2BA",
+        "#C1666B"
+    ];
+    return colors[
+        Math.floor(Math.random() * colors.length)
+    ];
+}
 
 function handleUpdate() {
     // I'm using this.base because of my id <3.
-    document.documentElement.style.setProperty('--clr-2', `#41E2BA`);
+    document.documentElement.style.setProperty('--clr-2', getColor());
 
 }
 
