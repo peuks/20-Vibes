@@ -66,9 +66,17 @@ function getColor() {
     ];
 }
 
-function handleUpdate() {
+async function randomBackground() {
+    document.querySelector("#banner").style.backgroundImage = "url()";
+}
+
+async function handleUpdate() {
     // I'm using this.base because of my id <3.
     document.documentElement.style.setProperty('--clr-2', getColor());
+
+    //    Test Random background change
+    await randomBackground();
+    document.querySelector("#banner").style.backgroundImage = "url(https://source.unsplash.com/featured/?{fitness},{sexy},{girl})";
 
 }
 
