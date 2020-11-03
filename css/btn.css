@@ -19,10 +19,10 @@
     border-radius: 1px;
     background: var(--clr-2);
     transition: background 0.3s ease;
-    border:none;
+    border: none;
 }
 
-a.btn.btn-flat:hover,.btn-flat:hover {
+.btn-flat:hover {
     background: var(--clr-1);
     color: white;
 }
@@ -40,8 +40,4 @@ a.btn.btn-flat:hover,.btn-flat:hover {
 .btn-gradient:hover {
     background: linear-gradient(#147EFF, #0F67DA);
     color: white;
-}
-
-{
-
 }

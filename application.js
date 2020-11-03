@@ -1,5 +1,5 @@
 const elements = {
-    burger: document.querySelector(".burger"),
+    // burger: document.querySelector(".burger"),
     nav: document.querySelector(".nav__links"),
     links: document.querySelectorAll(".nav__links a"),
     btn: document.querySelector("#btn-float"),
@@ -14,12 +14,13 @@ function renderNavBar() {
         }
     });
 }
-elements.burger.addEventListener("click", () => {
-    elements.nav.classList.toggle("nav-active");
-    renderNavBar();
-    // Toggle Burger
-    elements.burger.classList.toggle("toggle");
-})
+
+// elements.burger.addEventListener("click", () => {
+//     elements.nav.classList.toggle("nav-active");
+//     renderNavBar();
+//     // Toggle Burger
+//     elements.burger.classList.toggle("toggle");
+// })
 
 
 

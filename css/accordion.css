@@ -1,28 +1,44 @@
-.collapse {
+/* DROP LIST MENU */
+
+
+.accordion-item {
     border: solid rgba(0, 0, 0, 0.247) 1px;
     padding: 0.5em 1rem;
     margin-bottom: 1rem;
+    transform: translateY(1em);
 }
 
-.collapse a {
+.accordion-item-header {
+    padding: 0.5rem 0rem 0.5rem 3rem;
+
+    min-height: 3.5rem;
+    line-height: 1.25rem;
     font-weight: bold;
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
 }
 
-.inner-content {
-    padding: 0.5em 0 1em 1.1em;
-    color: var(--dark80);
+.accordion-item-header::after {
+    content: "\002B";
+    font-size: 2rem;
+    position: absolute;
+    left: 1rem;
+    color: var(--clr-2)
 }
 
-.content {
-    max-height: 0em;
-    transition: 0.3s linear 0s;
+.accordion-item-header.active::after {
+    content: "\2212";
+}
+
+.accordion-item-body {
+    max-height: 0;
     overflow: hidden;
+    transition: max-height 0.2s ease-out;
 }
 
-.collapse:target .content {
-    max-height: 15em;
-}
-
-.collapse:target a:before {
-    transform: rotate(-90deg);
+.accordion-item-body-content {
+    padding: 1rem;
+    line-height: 1.5rem;
 }
